@@ -36,6 +36,8 @@ refs.startBtn.addEventListener('click', onStartBtnClick)
 function onStartBtnClick(){
   intervalId = setInterval(updateTimer, 1000)
   refs.startBtn.disabled = true
+  refs.dateInputEl.disabled = true
+
 }
 
 function updateTimer(){
