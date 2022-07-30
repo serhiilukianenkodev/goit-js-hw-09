@@ -34,6 +34,10 @@ refs.startBtn.disabled = true
 refs.startBtn.addEventListener('click', onStartBtnClick)
 
 function onStartBtnClick(){
+  if(selectedDate - Date.now() <= 0){ Notify.failure("Please choose a date in the future",
+  { timeout: 3000},);
+return};
+
   intervalId = setInterval(updateTimer, 1000)
   refs.startBtn.disabled = true
   refs.dateInputEl.disabled = true
@@ -46,7 +50,7 @@ function updateTimer(){
   if (timeLeft < 1000) {
     clearInterval(intervalId)
     Notify.success("Congrats!!! Time`s up!!!")
-    refs.startBtn.disabled = false
+    refs.startBtn.disabled = true
     refs.dateInputEl.disabled = false
   }
 
