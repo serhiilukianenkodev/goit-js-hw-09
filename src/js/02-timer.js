@@ -46,6 +46,8 @@ function updateTimer(){
   if (timeLeft < 1000) {
     clearInterval(intervalId)
     Notify.success("Congrats!!! Time`s up!!!")
+    refs.startBtn.disabled = false
+    refs.dateInputEl.disabled = false
   }
 
   showTime(timeConverted, dataRefs)
